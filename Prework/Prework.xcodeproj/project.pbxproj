@@ -297,6 +297,7 @@
 				D66378021E613D9F005F257C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
