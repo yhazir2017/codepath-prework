@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
 
+    @IBOutlet var settingTipView: UIView!
     @IBOutlet weak var tip1Field: UITextField!
     
     @IBOutlet weak var tip2Field: UITextField!
@@ -22,8 +23,39 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         assignbackground()
         // Do any additional setup after loading the view.
+         tip1Field.becomeFirstResponder()
+        tip2Field.becomeFirstResponder()
+        tip3Field.becomeFirstResponder()
+        
+        tip1Field.keyboardType=UIKeyboardType.numberPad
+        tip2Field.keyboardType=UIKeyboardType.numberPad
+        tip3Field.keyboardType=UIKeyboardType.numberPad
+        tip1Field.keyboardAppearance = .alert
+        tip2Field.keyboardAppearance = .alert
+        tip3Field.keyboardAppearance = .alert
+        
+        
+    }
+    
+    func assignbackground(){
+        let background = UIImage(named: "money3")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        //imageView.contentMode =  UIViewContentMode.scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.settingTipView.sendSubview(toBack: imageView)
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
     }
 
 

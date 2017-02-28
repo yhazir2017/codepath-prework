@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,DataEnteredDelegate{
     
+    @IBOutlet var tipCalculatorView: UIView!
     @IBOutlet weak var billField: UITextField!
     
     @IBOutlet weak var tipLabel: UILabel!
@@ -27,6 +28,7 @@ class ViewController: UIViewController,DataEnteredDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assignbackground()
         
         // Read user settings Data
         tip1 = defaults.integer(forKey:"tip1")
@@ -42,8 +44,25 @@ class ViewController: UIViewController,DataEnteredDelegate{
         tipControl.setTitle(segmentlabel3, forSegmentAt: 2)
         tipPercentagesArray=[Double(tip1)/100.0,Double(tip2)/100.0,Double(tip3)/100.0]
         
+        billField.becomeFirstResponder()
+        billField.keyboardType=UIKeyboardType.numberPad
+        billField.keyboardAppearance = .alert
+    
+        
     }
-
+    
+    func assignbackground(){
+        let background = UIImage(named: "money3")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        //imageView.contentMode =  UIViewContentMode.scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.tipCalculatorView.sendSubview(toBack: imageView)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
