@@ -20,6 +20,14 @@ class SettingsViewController: UIViewController {
     
     var delegate:DataEnteredDelegate? = nil
     
+    var tip1:Int=18
+    var tip2:Int=20
+    var tip3:Int=25
+   
+    let defaults = UserDefaults.standard
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +44,92 @@ class SettingsViewController: UIViewController {
         tip2Field.keyboardAppearance = .alert
         tip3Field.keyboardAppearance = .alert
         
+        // Read user settings Data
+        tip1 = defaults.integer(forKey:"tip1")
+        tip2 = defaults.integer(forKey:"tip2")
+        tip3 = defaults.integer(forKey:"tip3")
+        
+        tip1Field.text!=String(tip1)
+        tip2Field.text!=String(tip2)
+        tip3Field.text!=String(tip3)
+
+        
+
+        
         
     }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        //Moving the elements off-screen
+     
+        tip1Field.center.y -= view.bounds.width
+        tip2Field.center.y -= view.bounds.width
+        tip3Field.center.y -= view.bounds.width
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+    
+        
+        //Achieving Fade-in animation with alpha
+        UIView.animate(withDuration: 1.0, delay: 1.0,
+                       options: [],
+                       animations: {
+                        self.tip1Field.alpha = 1.0
+        }, completion: nil)
+        
+        //Bringing back the bill field with animation
+        UIView.animate(withDuration: 2.0, animations: {
+            self.tip1Field.center.y += self.view.bounds.width
+        })
+        
+        //Achieving Fade-in animation with alpha
+        UIView.animate(withDuration: 1.0, delay: 1.0,
+                       options: [],
+                       animations: {
+                        self.tip1Field.alpha = 1.0
+        }, completion: nil)
+        
+        //Achieving Fade-in animation with alpha
+        UIView.animate(withDuration: 1.0, delay: 1.0,
+                       options: [],
+                       animations: {
+                        self.tip2Field.alpha = 1.0
+        }, completion: nil)
+        
+        //Bringing back the bill field with animation
+        UIView.animate(withDuration: 2.0, animations: {
+            self.tip2Field.center.y += self.view.bounds.width
+        })
+        
+        //Achieving Fade-in animation with alpha
+        UIView.animate(withDuration: 1.0, delay: 1.0,
+                       options: [],
+                       animations: {
+                        self.tip2Field.alpha = 1.0
+        }, completion: nil)
+        
+        //Achieving Fade-in animation with alpha
+        UIView.animate(withDuration: 1.0, delay: 1.0,
+                       options: [],
+                       animations: {
+                        self.tip3Field.alpha = 1.0
+        }, completion: nil)
+        
+        //Bringing back the bill field with animation
+        UIView.animate(withDuration: 2.0, animations: {
+            self.tip3Field.center.y += self.view.bounds.width
+        })
+        
+        //Achieving Fade-in animation with alpha
+        UIView.animate(withDuration: 1.0, delay: 1.0,
+                       options: [],
+                       animations: {
+                        self.tip3Field.alpha = 1.0
+        }, completion: nil)
+    }
+
     
     func assignbackground(){
         let background = UIImage(named: "money3")
@@ -53,10 +145,7 @@ class SettingsViewController: UIViewController {
     }
 
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("view will appear")
-    }
+
 
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +158,11 @@ class SettingsViewController: UIViewController {
         let tip1=Int(tip1Field.text!)
         let tip2=Int(tip2Field.text!)
         let tip3=Int(tip3Field.text!)
+            
+            defaults.set(tip1, forKey:"tip1")
+            defaults.set(tip2, forKey:"tip2")
+            defaults.set(tip3, forKey:"tip3")
+
         delegate?.userDidEnterInformation(data1:tip1,data2:tip2,data3:tip3)
         }
     }
