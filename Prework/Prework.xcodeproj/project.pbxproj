@@ -13,7 +13,6 @@
 		D66377F91E613D9F005F257C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66377F81E613D9F005F257C /* Assets.xcassets */; };
 		D66377FC1E613D9F005F257C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66377FA1E613D9F005F257C /* LaunchScreen.storyboard */; };
 		D6651A961E624ED500421EEE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6651A951E624ED500421EEE /* SettingsViewController.swift */; };
-		D6651A981E6696DC00421EEE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D6651A971E6696DC00421EEE /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		D66377FB1E613D9F005F257C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D66377FD1E613D9F005F257C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6651A951E624ED500421EEE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D6651A971E6696DC00421EEE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 				D66377F31E613D9F005F257C /* ViewController.swift */,
 				D66377F51E613D9F005F257C /* Main.storyboard */,
 				D6651A951E624ED500421EEE /* SettingsViewController.swift */,
-				D6651A971E6696DC00421EEE /* README.md */,
 				D66377F81E613D9F005F257C /* Assets.xcassets */,
 				D66377FA1E613D9F005F257C /* LaunchScreen.storyboard */,
 				D66377FD1E613D9F005F257C /* Info.plist */,
@@ -144,7 +141,6 @@
 			files = (
 				D66377F41E613D9F005F257C /* ViewController.swift in Sources */,
 				D66377F21E613D9F005F257C /* AppDelegate.swift in Sources */,
-				D6651A981E6696DC00421EEE /* README.md in Sources */,
 				D6651A961E624ED500421EEE /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
