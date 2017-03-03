@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SettingsViewController: UIViewController {
     
 
@@ -25,9 +26,6 @@ class SettingsViewController: UIViewController {
     var tip3:Int=25
    
     let defaults = UserDefaults.standard
-    
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +51,6 @@ class SettingsViewController: UIViewController {
         tip2Field.text!=String(tip2)
         tip3Field.text!=String(tip3)
 
-        
-
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -66,8 +60,6 @@ class SettingsViewController: UIViewController {
         tip1Field.center.y -= view.bounds.width
         tip2Field.center.y -= view.bounds.width
         tip3Field.center.y -= view.bounds.width
-        
-        
     }
     override func viewDidAppear(_ animated: Bool) {
     
@@ -129,8 +121,6 @@ class SettingsViewController: UIViewController {
                         self.tip3Field.alpha = 1.0
         }, completion: nil)
     }
-
-    
     func assignbackground(){
         let background = UIImage(named: "money3")
         
@@ -143,11 +133,6 @@ class SettingsViewController: UIViewController {
         view.addSubview(imageView)
         self.settingTipView.sendSubview(toBack: imageView)
     }
-
-    
-
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -164,10 +149,85 @@ class SettingsViewController: UIViewController {
             defaults.set(tip3, forKey:"tip3")
 
         delegate?.userDidEnterInformation(data1:tip1,data2:tip2,data3:tip3)
+            
+        let message = NSLocalizedString("Tip Parameters saved in Succesfully", comment : "Tip Parameters saved in Succesfully")
+            self.showSuccessMessage(message)
+            
+        
         }
+        else
+            {
+             let message = NSLocalizedString("Tip Parameters has not been saved.", comment : "Tip Parameters has not been saved.")
+            showErrorMessage(message)   
+            }
+        }
+    
+    /**
+     This method show an iOS styled Alert View for failed actions
+     - parameters:
+     - message: The message to be displayed in the alert view
+     */
+    func showErrorMessage(_ message: String) {
+        dismissProgress()
+        let title = NSLocalizedString("Error", comment : "Error")
+        let action = NSLocalizedString("Ok", comment : "Ok")
+        
+        // Warn the user
+        let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alertMessage.addAction(UIAlertAction(title: action, style: .default, handler: nil))
+        
+        present(alertMessage, animated: true, completion: nil)
     }
-
-}
+    
+    /**
+     This method show an iOS styled Alert View for successful actions
+     - parameters:
+     - message: The message to be displayed in the alert view
+     */
+    func showSuccessMessage(_ message: String) {
+        
+        let title = NSLocalizedString("Success", comment : "Success")
+        let action = NSLocalizedString("Ok", comment : "Ok")
+        
+        // Warn the user
+        let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alertMessage.addAction(UIAlertAction(title: action, style: .default, handler: nil))
+        
+        self.present(alertMessage, animated: true, completion: nil)
+    }
+    
+    /**
+     This method show an iOS styled Alert View for successful actions with action handler
+     - parameters:
+     - message: The message to be displayed in the alert view
+     - callback: The function to be called by the handler
+     */
+    func showSuccessMessage(_ message: String, callback: @escaping () -> Void) {
+        
+        let title = NSLocalizedString("Success", comment : "Success")
+        let action = NSLocalizedString("Ok", comment : "Ok")
+        
+        // Warn the user
+        let alertMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: action, style: .default) { (action) in
+            DispatchQueue.main.async(execute: {
+                callback()
+            })
+        }
+        
+        alertMessage.addAction(confirmAction)
+        
+        self.present(alertMessage, animated: true, completion: nil)
+    }
+    
+    func dismissProgress() {
+        self.navigationController?.popViewController(animated: true);
+    }
+    
+    }
 
 protocol DataEnteredDelegate {
     func userDidEnterInformation(data1: Int!,data2: Int!,data3: Int!)

@@ -112,7 +112,7 @@ class ViewController: UIViewController,DataEnteredDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+   
     @IBAction func calculateTip(_ sender: AnyObject) {
         
         let bill =  Double(billField.text!) ?? 0
@@ -125,6 +125,8 @@ class ViewController: UIViewController,DataEnteredDelegate{
         
         defaults.set(totalValue,forKey:"totalValue")
         
+    }
+    @IBAction func billChanged(_ sender: Any) {
     }
     
     @IBAction func onTap(_ sender: Any) {

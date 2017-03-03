@@ -10,12 +10,12 @@ Time spent: Initially 4 hours for the requirements and after learning user defau
 
 The following required functionality is complete:
 
-* [X ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
-[X ] Settings page to change the default tip percentage.
+* [X] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+  [X] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [X ] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
+* [X] UI animations
+* [X] Remembering the bill amount across app restarts (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
 * [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
@@ -40,7 +40,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with http://gifcreator.me.
 
 ## Notes
 
@@ -48,7 +48,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [yh] [Yildiray Hazir]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
