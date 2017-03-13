@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Screenhots](https://github.com/yhazir2017/codepath-prework/blob/master/TipCalculator.gif = 225x400)
+![Screenhots](https://github.com/yhazir2017/codepath-prework/blob/master/TipCalculator.gif)
 
 
 The following **additional** features are implemented:
@@ -38,7 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Screenhots](http://i.imgur.com/link/to/your/gif/file.gif)
+![Screenhots](https://github.com/yhazir2017/codepath-prework/blob/master/TipCalculator.gif)
 
 GIF created with http://gifcreator.me.
 
